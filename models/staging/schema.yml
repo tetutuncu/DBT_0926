@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw
+    database: regal-mediator-483907-t1
+    schema: course14
+    tables:
+      - name: sales
+        identifier: gwz_sales
+        description: "Sales list in greenweez company"
+        columns:
+          - name: date_date
+            description: "Date of the order"
+            tests:
+              - not_null
+          - name: product_id
+            description: "id of the product"
+            tests:
+              - not_null
+      - name: customers
+        identifier: gwz_customers
+        description: "Include name and surname of the customers"
+        columns:
+          - name: id
+            description: "unique id of customer"  #burası unique olmalı
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "name of the customer"
+            tests:
+              - not_null
+            
+              
+              
+            
